@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native-web";
+import { ScrollView } from "react-native";
 import { fetchSuperHeroById } from "../api/superHeroApi";
 import { useEffect, useState } from "react";
 import DetailsCard from "../components/characterDetails";

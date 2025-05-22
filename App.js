@@ -13,13 +13,15 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
-        name="Home" 
+        name="Lista personajes" 
         component={ListHome}
-        options={{ title: 'Bienvenido' }}
+        //Quitar navbar
+        options={{ headerShown: false }}
         />
         <Stack.Screen 
-        name="Details" 
+        name="Detalles de personajes" 
         component={DetailsScreen}
+        options={{ headerShown: false }}
         /> 
       </Stack.Navigator>
     </NavigationContainer>

@@ -7,14 +7,12 @@ export default function CharacterCard({ character }) {
     const navigation = useNavigation();
     return (
         <View style={styles.containerCard}>
-            <View style={styles.idImg}>
-                <TouchableOpacity onPress={() => navigation.navigate('Details', { id: character.id })}>
+                <TouchableOpacity style={styles.idImg} onPress={() => navigation.navigate('Detalles de personajes', { id: character.id })}>
                     <Image source={{uri: character.images.lg}} style={styles.image} />
                     <Text style={styles.textID}>#{character.id}</Text>
                 </TouchableOpacity>
-            </View>
-            <Text>Nombre profesional: {character.name}</Text>
-            <Text>Nombre original: {character.biography.fullName}</Text>
+            <Text style={styles.textCard}>Nombre profesional: {character.name}</Text>
+            <Text style={styles.textCard}>Nombre original: {character.biography.fullName}</Text>
         </View>
   );
 }

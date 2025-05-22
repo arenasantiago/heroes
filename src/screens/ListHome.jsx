@@ -1,14 +1,14 @@
 import React, { use, useEffect, useState } from 'react';
 import { fetchSuperHeroes } from '../api/superHeroApi';
-import { ActivityIndicator, ScrollView } from 'react-native-web';
+import { ActivityIndicator, ScrollView } from 'react-native';
 import CharacterList from '../components/characterList';
 import { Button, Text, View } from 'react-native';
+import styles from '../styles/styles'; 
 
-export default function ListHome({ }) {
+export default function ListHome() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [statusFilter, setStatusFilter] = useState('');
   const [totalPages, setTotalPages] = useState(0);
 
     const fetchData = async (page) => {
@@ -18,11 +18,11 @@ export default function ListHome({ }) {
         const data = await fetchSuperHeroes();
         let datos = [];
         if(page > 1){
-            for(let i = (page - 1) * 10; i < page * 10; i++){
+            for(let i = (page - 1) * 20; i < page * 20; i++){
                 datos[i] = data[i];
             }
         }else{
-            for(let i = 0; i < 10; i++){
+            for(let i = 0; i < 20; i++){
                 datos[i] = data[i];
             }
         }
@@ -37,7 +37,7 @@ export default function ListHome({ }) {
 
     useEffect(() => {
         fetchData(page);
-    }, [page, statusFilter]);
+    }, [page]);
 
   const handleNext = () => {
     if (page < totalPages) {
@@ -57,17 +57,10 @@ export default function ListHome({ }) {
   
   return (
     <ScrollView>
-        <Text>Lista de personajes</Text>
-        {loading ? (
-            <ActivityIndicator size='large' color='red'/>
-        ) : 
-            <View>
-                <View>
-                </View>
-                <CharacterList characters={characters}/>
-            </View>
-
-        }
+        <Text style= {styles.textList}>Lista de personajes</Text>
+        <View>
+          <CharacterList characters={characters}/>
+        </View>
         <View>
             <Button title="Prev" onPress={handlePrevious} disabled={page === 1} />
             <Text>Page {page} of {totalPages}</Text>

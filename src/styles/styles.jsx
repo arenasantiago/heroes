@@ -1,9 +1,8 @@
 import { StyleSheet } from "react-native";
 import { Dimensions } from "react-native";
 
-
-const ScreenWidth = Dimensions.get('window').width;
-const styles = StyleSheet.create({
+    const ScreenWidth = Dimensions.get('window').width;
+    const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -35,7 +34,86 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     containerCard: {
-        width: ScreenWidth / 4 - 20,
+        width: ScreenWidth / 1.05,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f8f8f8',
+        padding: 10,
+        margin: 10,
+        borderRadius: 10,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    idImg:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    grid:{
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+
+    },
+    textList:{
+        fontSize: 45,
+        fontWeight: 'bold',
+        marginBottom: 10,
+        marginTop: 10,
+        marginLeft: 10,
+        textAlign: 'center',
+    },
+    textDetails:{
+        fontSize: 25,
+        fontWeight: 'italic',
+        marginBottom: 10,
+        marginTop: 10,
+        marginLeft: 10,
+        textAlign: 'center',
+    },
+    textCard:{
+        fontSize: 17,
+        marginBottom: 10,
+        marginTop: 10,
+        marginLeft: 10,
+        textAlign: 'center',
+    },
+    idImage:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    images:{
+        width: 200,
+        height: 200,
+        marginLeft: 10,
+    },
+    containerDetails:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f8f8f8',
+        padding: 10,
+        paddingTop: 40,
+        margin: 10,
+        marginRight: 10,
+        borderRadius: 10,
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+    },
+    containerStats:{
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
@@ -53,17 +131,6 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5
     },
-    idImg:{
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 10,
-    },
-    grid:{
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        paddingHorizontal: 10
-    }
 });
 
 export default styles;
